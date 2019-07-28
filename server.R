@@ -1,15 +1,11 @@
-#
-# This is the server logic of a Shiny web application. You can run the
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+# TA Group Assignment - Question 3
+# Team: 1. Dhananjay Rane (11915051) 2. Ravi Sastry (11915069) 3. Veeresh Kumar (11915087)
+# Server Side code
+
 
 library(shiny)
 
-# Define server logic required to draw a histogram
+# Defining a server
 shinyServer(function(input, output) {
     
     ## Readinf the file
@@ -25,10 +21,10 @@ shinyServer(function(input, output) {
     ## Annotation of sentences
     annotated_sentences <- reactive({
      
-      # load english model for annotation from working dir
+      # Load english model for annotation from working dir
       english_model = udpipe_load_model("./udmodel/english-ewt-ud-2.4-190531.udpipe")  # file_model only needed
       
-      # now annotate text dataset using ud_model above
+      # Annotate text dataset using ud_model above
       corpus <- udpipe_annotate(english_model, x = dataset()) #%>% as.data.frame() %>% head()
       
       annotated_sentences <- as.data.frame(corpus)
@@ -39,7 +35,7 @@ shinyServer(function(input, output) {
       if (!("ADV" %in% input$checkGroupUPOS))  annotated_sentences <- annotated_sentences %>% filter(upos != "ADV")
       if (!("VERB" %in% input$checkGroupUPOS))  annotated_sentences <- annotated_sentences %>% filter(upos != "VERB")
       
-      #Removing the unwnted upos
+      # Removing the unwnted upos
       annotated_sentences <- annotated_sentences %>% filter(upos != "PRON")
       annotated_sentences <- annotated_sentences %>% filter(upos != "AUX")
       annotated_sentences <- annotated_sentences %>% filter(upos != "ADP")

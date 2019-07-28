@@ -1,11 +1,6 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+# TA Group Assignment - Question 3
+# Team: 1. Dhananjay Rane (11915051) 2. Ravi Sastry (11915069) 3. Veeresh Kumar (11915087)
+# UI Side code
 
 library(shiny)
 library(dplyr)

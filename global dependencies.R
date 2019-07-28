@@ -1,3 +1,7 @@
+# TA Group Assignment - Question 3
+# Team: 1. Dhananjay Rane (11915051) 2. Ravi Sastry (11915069) 3. Veeresh Kumar (11915087)
+# Dependencies
+
 if (!require(shiny)) {install.packages("shiny")}
 if (!require(dplyr)) {install.packages("dplyr")}
 if (!require(textrank)) {install.packages("textrank")}
