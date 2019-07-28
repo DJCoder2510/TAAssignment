@@ -35,11 +35,12 @@ shinyUI(fluidPage(
             
             tabsetPanel(type = "tabs",
                         
-                    tabPanel("Overview",h4(p("How to use this App")),
-                             
-                       p("To use this app you need a document (e.g., newspaper article etc.) in txt file format.\n\n 
-                       To upload the article text, click on Browse in left-sidebar panel and upload the txt file from your local machine. \n\n
-                       Once the file is uploaded, the shinyapp will compute a text summary in the back-end with default inputs and accordingly results will be displayed in various tabs.", align = "justify")),
+                    tabPanel("Overview",h4(p("NLP workflow app using udpipe")),
+                       p("This application will help you to perform operations around Part-Of-Speech functionality of NLP. 
+                          You need to upload your text file which you want to analyze. The first tab - Annotations will help you 
+                         to analyze POS tags like , Noun, Adjective, Propoer Noun , Verb and Adverb. The next tabs will help you 
+                         to see a wordcloud of Nouns or Verbs. Tab for cooccurence will help you to analyze the cooccurrences 
+                         between the different words.", align = "justify")),
         
             
                     tabPanel("Annotations",
